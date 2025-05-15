@@ -1,3 +1,15 @@
+# Qantas Fork of Lazysodium Android
+
+15th May 2025 - Reference ticket [TREX-4251](https://qantas.atlassian.net/browse/TREX-4251)
+
+[Lazysodium](https://github.com/terl/lazysodium-java) is unmaintained and is incompatible with 16KB Page Size devices due to the native [libsodium](https://doc.libsodium.org/) code. Lazysodium is required by the [Qantas Travel App](https://github.com/qantas-cloud/a868-android) for [Rewards Code Decryption](https://github.com/qantas-cloud/a868-android/blob/master/qta/feature/qffdashboard/src/main/java/au/com/qantas/qffdashboard/security/RewardsEncryptionUtil.kt).
+
+In order to fix this, the libsodium .so files have been remove and replaced by a compliled aar [via these instructions](https://doc.libsodium.org/installation#cross-compiling-to-android).
+
+The repo has then been updated with the latest Android Gradle Plugin and support for Android 16 (API 36) so that it can be included and supports 16KB Page Size devices using these [requirements](https://developer.android.com/guide/practices/page-sizes).
+
+
+
 <p align="center"><img width="260" src="https://filedn.com/lssh2fV92SE8dRT5CWJvvSy/lazysodium_large_transparent.png" /></p>
   
 # Lazysodium Android
